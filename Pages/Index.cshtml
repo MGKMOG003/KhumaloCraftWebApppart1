@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+<img src="~/images/home-banner.png" alt="Crafted Goods" class="img-fluid" />
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to KhumaloCraft Emporium</h1>
+    <p class="lead">Connecting World-Class Artisans with Connoisseurs of Fine Handcrafted Goods.</p>
+    <p>Discover the stories behind each unique craft, brought to you from the farthest corners of the globe.</p>
+</div>
+<div class="mt-4">
+    <a asp-page="/About" class="btn btn-primary">Learn More About Us</a>
+    <a asp-page="/MyWork" class="btn btn-success">Explore Our Work</a>
+    <a asp-page="/Contact" class="btn btn-info">Get in Touch</a>
+</div>
+

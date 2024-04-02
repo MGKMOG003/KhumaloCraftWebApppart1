@@ -1,0 +1,35 @@
+﻿@page
+@model AboutModel
+@{
+    ViewData["Title"] = "About Us";
+}
+<div style="font-family: Arial, sans-serif; margin: 20px;">
+    <h2 style="color: #007BFF;">About KhumaloCraft</h2>
+    <p style="text-align: justify; margin-bottom: 20px;">KhumaloCraft is a vibrant platform that bridges the gap between artisans from every corner of the globe and a discerning international audience. Our mission is to bring the world's finest handcrafted goods to your doorstep, providing a stage for skilled artisans to showcase their work and share their stories.</p>
+
+    <p style="text-align: justify; margin-bottom: 20px;">Founded on the principles of sustainability, community, and excellence, KhumaloCraft not only celebrates the beauty of handcrafted items but also supports the people behind them. Every piece tells a story of tradition, dedication, and passion, connecting cultures through the universal language of art.</p>
+
+    <p style="text-align: justify; margin-bottom: 20px;">Our vision extends beyond commerce; we strive to create a global community where artisans feel valued and customers find meaning in every purchase. By fostering direct connections between these groups, we aim to contribute to a more equitable and connected world.</p>
+
+    <div style="margin-top: 30px;">
+        <h3 style="color: #28A745;">Contact Us</h3>
+        <p style="margin-bottom: 20px;">For inquiries, suggestions, or to simply say hello, please use the form below or reach out via:</p>
+        <p style="margin-bottom: 20px;">Email: <a href="mailto:info@kumalocrafts.co.za" style="color: #007BFF;">info@kumalocrafts.co.za</a><br>
+        Phone: <a href="tel:+27114533731" style="color: #007BFF;">+27114533731</a><br>
+        Address: 14 Bundo Road, Sebenza, Edenvale, 1609</p>
+
+        <h4 style="margin-bottom: 20px;">Send Us a Message</h4>
+        <form method="post" style="margin-bottom: 20px;">
+            <input type="text" name="name" placeholder="Your Name" required style="margin-bottom: 10px; padding: 10px; width: 300px;"/><br>
+            <input type="email" name="email" placeholder="Your Email" required style="margin-bottom: 10px; padding: 10px; width: 300px;"/><br>
+            <textarea name="message" placeholder="Your Message" required style="padding: 10px; width: 300px; height: 100px;"></textarea><br>
+            <button type="submit" style="padding: 10px 20px; margin-top: 10px; background-color: #007BFF; color: white; border: none; cursor: pointer;">Submit</button>
+        </form>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <h4 style="margin-bottom: 20px;">Find Us Here</h4>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.16370886499!2d28.045170874619448!3d-26.09357417714484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95733c18d3cb89%3A0xed59860bb3c2c891!2sThe%20IIE&#39;s%20Varsity%20College%20-%20Sandton!5e0!3m2!1snl!2snl!4v1711975928557!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</div>
