@@ -1,0 +1,11 @@
+﻿namespace KhumaloCraftWebApp.Models
+{
+    public class Contact
+    {
+        public int ContactID { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Message { get; set; } = string.Empty;
+        public DateTime DateSubmitted { get; set; }
+    }
+}

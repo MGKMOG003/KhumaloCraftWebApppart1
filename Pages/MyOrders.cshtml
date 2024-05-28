@@ -1,0 +1,36 @@
+﻿@page
+@model KhumaloCraftWebApp.Pages.MyOrdersModel
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+<h2>My Orders</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Order Date</th>
+            <th>Total Amount</th>
+            <th>Order Items</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.Orders)
+        {
+            <tr>
+                <td>@order.OrderID</td>
+                <td>@order.OrderDate</td>
+                <td>R@order.TotalAmount.ToString("F2")</td> <!-- Correctly format the price here -->
+                <td>
+                    <ul>
+                        @foreach (var item in order.OrderItems)
+                        {
+                            <li>@item.Product.ProductName - Quantity: @item.Quantity</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

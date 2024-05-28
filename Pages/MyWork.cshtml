@@ -1,46 +1,35 @@
 ﻿@page
-@model MyWorkModel
-@{
-    ViewData["Title"] = "My Work";
-}
+@model KhumaloCraftWebApp.Pages.MyWorkModel
+
 <div style="text-align: center; margin-bottom: 40px;">
-    <h1 style="margin-bottom: 20px;">Our Craftwork</h1>
+    <h1 style="margin-bottom: 20px; color: #D6BA88;">Our Craftwork</h1>
     <p>Explore our unique handcrafted items, crafted with love and precision.</p>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-    <!-- Craft 1 -->
-    <div style="width: 220px; padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
-        <h3 style="margin: 20px 0;">Handwoven Basket</h3>
-        <img src="~/images/handwoven-basket.jpg.jpeg" alt="Handwoven Basket" style="width: 100%; height: auto; margin-bottom: 10px;">
-        <p>R250.00</p>
-    </div>
-
-    <!-- Craft 2 -->
-    <div style="width: 220px; padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
-        <h3 style="margin: 20px 0;">Decorative Pottery Vase</h3>
-        <img src="~/images/decorative-pottery-vase.jpg.jpeg" alt="Decorative Pottery Vase" style="width: 100%; height: auto; margin-bottom: 10px;">
-        <p>R840.00</p>
-    </div>
-
-    <!-- Craft 3 -->
-    <div style="width: 220px; padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
-        <h3 style="margin: 20px 0;">Handcrafted Wooden Bowl</h3>
-        <img src="~/images/handcrafted-wooden-bowl.jpg.jpeg" alt="Handcrafted Wooden Bowl" style="width: 100%; height: auto; margin-bottom: 10px;">
-        <p>R300.00</p>
-    </div>
-
-    <!-- Craft 4 -->
-    <div style="width: 220px; padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
-        <h3 style="margin: 20px 0;">Beaded Jewelry Set</h3>
-        <img src="~/images/beaded-jewelry-set.jpg.jpeg" alt="Beaded Jewelry Set" style="width: 100%; height: auto; margin-bottom: 10px;">
-        <p>R735.00</p>
-    </div>
-
-    <!-- Craft 5 -->
-    <div style="width: 220px; padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
-        <h3 style="margin: 20px 0;">Embroidered Linen Tablecloth</h3>
-        <img src="~/images/embroidered-linen-tablecloth.jpg.jpeg" alt="Embroidered Linen Tablecloth" style="width: 100%; height: auto; margin-bottom: 10px;">
-        <p>R950.00</p>
-    </div>
+    @foreach (var product in Model.Products)
+    {
+        <div style="width: 220px; padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
+            <h3 style="margin: 20px 0; color: #D6BA88;">
+                <a href="/ProductDetails/@product.ProductID">@product.ProductName</a>
+            </h3>
+            <img src="~/images/@product.ProductName.Replace(" ", "-").ToLower()}.jpeg" alt="@product.ProductName" style="width: 100%; height: auto; margin-bottom: 10px;">
+            <p>R @product.Price.ToString("F2")</p>
+            <p>@product.Description</p>
+            <p><strong>Category:</strong> @product.Category</p>
+            <p><strong>Availability:</strong> @product.Availability</p>
+            <p><strong>Rating:</strong> @product.Rating</p>
+            @if (product.Availability > 0)
+            {
+                <form method="post" asp-page="/Order">
+                    <input type="hidden" name="ProductID" value="@product.ProductID" />
+                    <button type="submit" class="btn btn-primary" style="background-color: #D6BA88;">Order Now</button>
+                </form>
+            }
+            else
+            {
+                <button disabled class="btn btn-secondary">Out of Stock</button>
+            }
+        </div>
+    }
 </div>

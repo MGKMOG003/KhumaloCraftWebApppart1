@@ -10,9 +10,26 @@
     <p class="lead">Connecting World-Class Artisans with Connoisseurs of Fine Handcrafted Goods.</p>
     <p>Discover the stories behind each unique craft, brought to you from the farthest corners of the globe.</p>
 </div>
-<div class="mt-4">
-    <a asp-page="/About" class="btn btn-primary">Learn More About Us</a>
-    <a asp-page="/MyWork" class="btn btn-success">Explore Our Work</a>
-    <a asp-page="/Contact" class="btn btn-info">Get in Touch</a>
-</div>
 
+<div style="display: flex; justify-content: space-around; margin-top: 20px; flex-wrap: nowrap;">
+    <div style="text-align: center; flex-basis: 30%; max-width: 300px;">
+        <a href="/About">
+            <img src="~/images/home-learnmoretile.png" alt="About Us" style="width: 100%; height: auto; border: 2px solid #ccc;">
+        </a>
+        <p style="margin-top: 10px; font-size: 18px;">Learn more about KhumaloCraft and our mission to connect artisans with a global audience.</p>
+    </div>
+
+    <div style="text-align: center; flex-basis: 30%; max-width: 300px;">
+        <a href="/OurWork">
+            <img src="~/images/home-exploretile.png" alt="Our Work" style="width: 100%; height: auto; border: 2px solid #ccc;">
+        </a>
+        <p style="margin-top: 10px; font-size: 18px;">Explore the unique handcrafted products created by talented artisans worldwide.</p>
+    </div>
+
+    <div style="text-align: center; flex-basis: 30%; max-width: 300px;">
+        <a href="/Contact">
+            <img src="~/images/home-contacttile.png" alt="Contact" style="width: 100%; height: auto; border: 2px solid #ccc;">
+        </a>
+        <p style="margin-top: 10px; font-size: 18px;">Get in touch with us for any inquiries or support regarding KhumaloCraft.</p>
+    </div>
+</div>

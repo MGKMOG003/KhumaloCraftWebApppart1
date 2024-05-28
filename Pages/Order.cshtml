@@ -1,0 +1,31 @@
+﻿@page
+@model KhumaloCraftWebApp.Pages.OrderModel
+@{
+    ViewData["Title"] = "Place Order";
+}
+
+<h2>Place Order</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Order.CustomerName" class="control-label"></label>
+        <input asp-for="Order.CustomerName" class="form-control" />
+        <span asp-validation-for="Order.CustomerName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Order.CustomerEmail" class="control-label"></label>
+        <input asp-for="Order.CustomerEmail" class="form-control" />
+        <span asp-validation-for="Order.CustomerEmail" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Order.CustomerAddress" class="control-label"></label>
+        <input asp-for="Order.CustomerAddress" class="form-control" />
+        <span asp-validation-for="Order.CustomerAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Order.CustomerPhone" class="control-label"></label>
+        <input asp-for="Order.CustomerPhone" class="form-control" />
+        <span asp-validation-for="Order.CustomerPhone" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Place Order</button>
+</form>

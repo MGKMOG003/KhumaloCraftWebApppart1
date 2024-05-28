@@ -7,20 +7,23 @@ using System.Threading.Tasks;
 
 namespace KhumaloCraftWebApp.Pages
 {
-    public class MyWorkModel : PageModel
+    public class MyOrdersModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public MyWorkModel(ApplicationDbContext context)
+        public MyOrdersModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public IList<Product> Products { get; set; }
+        public IList<Order> Orders { get; set; }
 
         public async Task OnGetAsync()
         {
-            Products = await _context.Products.ToListAsync();
+            Orders = await _context.Orders
+                .Include(o => o.OrderItems)
+                .ThenInclude(oi => oi.Product)
+                .ToListAsync();
         }
     }
 }

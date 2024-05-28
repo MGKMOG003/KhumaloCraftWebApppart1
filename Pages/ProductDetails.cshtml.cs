@@ -2,25 +2,24 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using KhumaloCraftWebApp.Data;
 using KhumaloCraftWebApp.Models;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace KhumaloCraftWebApp.Pages
 {
-    public class MyWorkModel : PageModel
+    public class ProductDetailsModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public MyWorkModel(ApplicationDbContext context)
+        public ProductDetailsModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public IList<Product> Products { get; set; }
+        public Product Product { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int id)
         {
-            Products = await _context.Products.ToListAsync();
+            Product = await _context.Products.FirstOrDefaultAsync(m => m.ProductID == id);
         }
     }
 }

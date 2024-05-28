@@ -1,0 +1,12 @@
+﻿@page
+@model KhumaloCraftWebApp.Pages.OrderConfirmationModel
+@{
+    ViewData["Title"] = "Order Confirmation";
+}
+
+<h2>Order Confirmation</h2>
+
+<p>Thank you for your order! Your order ID is @Model.Order.OrderID.</p>
+<p>Total Amount: R@Model.Order.TotalAmount</p>
+
+<a asp-page="/MyOrders">View My Orders</a>

@@ -1,0 +1,11 @@
+﻿@page "{id:int}"
+@model KhumaloCraftWebApp.Pages.ProductDetailsModel
+
+<h2>@Model.Product.ProductName</h2>
+<img src="~/images/@Model.Product.ProductName.Replace(" ", "-").ToLower()}.jpg" alt="@Model.Product.ProductName" style="width: 100%; height: auto; margin-bottom: 10px;">
+<p><strong>Price:</strong> @Model.Product.Price.ToString("C")</p>
+<p><strong>Description:</strong> @Model.Product.Description</p>
+<p><strong>Category:</strong> @Model.Product.Category</p>
+<p><strong>Availability:</strong> @Model.Product.Availability</p>
+<p><strong>Rating:</strong> @Model.Product.Rating</p>
+<a href="/Order/@Model.Product.ProductID">Order Now</a>

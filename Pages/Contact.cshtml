@@ -1,40 +1,36 @@
 ﻿@page
-@model ContactModel
+@model KhumaloCraftWebApp.Pages.ContactModel
 @{
     ViewData["Title"] = "Contact Us";
 }
-<div style="font-family: Arial, sans-serif; margin: 20px;">
-    <h2 style="color: #077B6F; text-align: center;">Contact KhumaloCraft</h2>
-    <p style="text-align: center; margin-bottom: 20px;">We'd love to hear from you! Use the form below to send us a message, or reach out through our contact details.</p>
 
-    <div style="max-width: 600px; margin: auto;">
-        <h3 style="color: #28A745; margin-bottom: 20px;">Get In Touch</h3>
-        <p style="margin-bottom: 20px;">
-            Email: <a href="mailto:info@kumalocrafts.co.za" style="color: #007BFF;">info@kumalocrafts.co.za</a><br>
-            Phone: <a href="tel:+27114533731" style="color: #007BFF;">+27114533731</a><br>
-            Address: 14 Bundo Road, Sebenza, Edenvale, 1609
-        </p>
+<h2>Contact Us</h2>
 
-        <h4 style="margin-bottom: 20px;">Message Us</h4>
-        <form method="post" style="margin-bottom: 20px;">
-            <div style="margin-bottom: 10px;">
-                <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; width: 100%;" />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="ContactMessage.Name"></label>
+                <input asp-for="ContactMessage.Name" class="form-control" />
+                <span asp-validation-for="ContactMessage.Name" class="text-danger"></span>
             </div>
-            <div style="margin-bottom: 10px;">
-                <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; width: 100%;" />
+            <div class="form-group">
+                <label asp-for="ContactMessage.Email"></label>
+                <input asp-for="ContactMessage.Email" class="form-control" />
+                <span asp-validation-for="ContactMessage.Email" class="text-danger"></span>
             </div>
-            <div style="margin-bottom: 10px;">
-                <textarea name="message" placeholder="Your Message" required style="padding: 10px; width: 100%; height: 150px;"></textarea>
+            <div class="form-group">
+                <label asp-for="ContactMessage.Message"></label>
+                <textarea asp-for="ContactMessage.Message" class="form-control"></textarea>
+                <span asp-validation-for="ContactMessage.Message" class="text-danger"></span>
             </div>
-            <div style="text-align: center;">
-                <button type="submit" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; cursor: pointer;">Send Message</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Send</button>
             </div>
         </form>
     </div>
-
-    <div style="max-width: 600px; margin: auto; margin-top: 20px;">
-        <h4 style="margin-bottom: 20px;">Find Us Here</h4>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.16370886499!2d28.045170874619448!3d-26.09357417714484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95733c18d3cb89%3A0xed59860bb3c2c891!2sThe%20IIE&#39;s%20Varsity%20College%20-%20Sandton!5e0!3m2!1snl!2snl!4v1711975928557!5m2!1snl!2snl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
 </div>
 
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
